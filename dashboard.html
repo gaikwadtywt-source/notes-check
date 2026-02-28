@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notes Chek Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <h2>Notes Chek</h2>
+  <div>
+    <button onclick="toggleDark()">🌙</button>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="top-controls">
+    <input type="text" id="searchInput" placeholder="Search notes..." onkeyup="filterNotes()">
+
+    <select id="semesterFilter" onchange="filterNotes()">
+      <option value="all">All Semesters</option>
+      <option value="Sem 1">Sem 1</option>
+      <option value="Sem 2">Sem 2</option>
+      <option value="Sem 3">Sem 3</option>
+      <option value="Sem 4">Sem 4</option>
+    </select>
+
+    <button class="add-btn" onclick="openModal()">+ Add Note</button>
+  </div>
+
+  <div id="notesContainer" class="notes-grid"></div>
+
+</div>
+
+<!-- Modal -->
+<div id="noteModal" class="modal">
+  <div class="modal-content">
+    <h3>Add New Note</h3>
+    <input type="text" id="noteTitle" placeholder="Note Title">
+    <select id="noteSemester">
+      <option value="Sem 1">Sem 1</option>
+      <option value="Sem 2">Sem 2</option>
+      <option value="Sem 3">Sem 3</option>
+      <option value="Sem 4">Sem 4</option>
+    </select>
+    <button onclick="addNote()">Save</button>
+    <button class="close-btn" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
